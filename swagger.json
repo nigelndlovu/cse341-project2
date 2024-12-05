@@ -5,9 +5,10 @@
     "description": "MusicInfo Api",
     "version": "1.0.0"
   },
-  "host": "cse341-project2-ix6v.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
@@ -178,9 +179,12 @@
           "Music"
         ],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       },
@@ -189,9 +193,50 @@
           "Music"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "songTitle": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "composer": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "sales": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "youtube": {
+                  "example": "any"
+                },
+                "appleMusic": {
+                  "example": "any"
+                },
+                "spotify": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -202,9 +247,20 @@
           "Music"
         ],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       },
@@ -213,9 +269,56 @@
           "Music"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "songTitle": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "composer": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "sales": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "youtube": {
+                  "example": "any"
+                },
+                "appleMusic": {
+                  "example": "any"
+                },
+                "spotify": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description":  "Internal Server Error"
           }
         }
       },
@@ -224,9 +327,20 @@
           "Music"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
