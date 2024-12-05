@@ -1,5 +1,5 @@
-const mongodb = require('../data/database');
-const ObjectId = require('mongodb').ObjectId;
+import mongodb from '../data/database';
+import { ObjectId } from 'mongodb';
 
 const getAllMusic = async (req, res) => {
 	//#swagger.tags=['Music']
@@ -14,7 +14,7 @@ const getSingleMusic = async (req, res) => {
 	//#swagger.tags=['Music']
 	const musicId = new ObjectId(req.params.id);
 	const result = await mongodb.getDatabase().db().collection('music').find({ _id: musicId });
-	result.toArray().then(() => {
+	result.toArray().then((music) => {
 		res.setHeader('Content-Type', 'application/json');
 		res.status(200).json(music[0]);
 	});
@@ -74,7 +74,7 @@ const deleteMusic = async (req, res) => {
 	};
 };
 
-module.exports = {
+export default {
 	getAllMusic,
 	getSingleMusic,
 	createMusic,
