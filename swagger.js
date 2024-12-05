@@ -5,7 +5,7 @@ const doc = {
 		title: 'MusicInfo Api',
     description: 'MusicInfo Api'
   },
-  host: 'localhost:3000',
+  host: 'localhost:3001',
   schemes: ['http', 'https']
 };
 
