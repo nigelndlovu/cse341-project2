@@ -1,5 +1,5 @@
-import mongodb from '../data/database';
-import { ObjectId } from 'mongodb';
+const mongodb = require('../data/database').default;
+const ObjectId = require('mongodb').ObjectId;
 
 const getAllMusic = async (req, res) => {
 	//#swagger.tags=['Music']
@@ -74,7 +74,7 @@ const deleteMusic = async (req, res) => {
 	};
 };
 
-export default {
+module.exports = {
 	getAllMusic,
 	getSingleMusic,
 	createMusic,

@@ -1,16 +1,16 @@
-import { Router } from 'express';
-const router = Router();
+const express = require('express');
+const router = express.Router();
 
-import { getAllMusic, getSingleMusic, createMusic, updateMusic, deleteMusic } from '../controllers/music';
+const musicController = require('../controllers/music');
 
-router.get('/', getAllMusic);
+router.get('/', musicController.getAllMusic);
 
-router.get('/:id', getSingleMusic);
+router.get('/:id', musicController.getSingleMusic);
 
-router.post('/', createMusic);
+router.post('/', musicController.createMusic);
 
-router.put('/:id', updateMusic);
+router.put('/:id', musicController.updateMusic);
 
-router.delete('/:id', deleteMusic);
+router.delete('/:id', musicController.deleteMusic);
 
-export default router;
+module.exports = router;

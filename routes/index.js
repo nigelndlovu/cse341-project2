@@ -1,13 +1,13 @@
 const router = require('express').Router();
 
-router.use('/', require('./swagger').default);
+router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
 	//#swagger.tags=['Hello World']
   res.send('Hello World') 
 });
 
-router.use('/users', require('./users').default);
-router.use('/music', require('./music').default);
+router.use('/users', require('./users'));
+router.use('/music', require('./music'));
 
-export default router;
+module.exports = router;

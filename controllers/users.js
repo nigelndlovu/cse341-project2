@@ -1,5 +1,5 @@
-import mongodb from '../data/database';
-import { ObjectId } from 'mongodb';
+const mongodb = require('../data/database').default;
+const ObjectId = require('mongodb').ObjectId;
 
 const getAllUsers = async (req, res) => {
 	//#swagger.tags=['Users']
@@ -66,7 +66,7 @@ const deleteUser = async (req, res) => {
 	};
 };
 
-export default {
+module.exports = {
 	getAllUsers,
 	getSingleUser,
 	createUser,
