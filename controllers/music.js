@@ -1,5 +1,5 @@
 const mongodb = require('../data/database');
-const ObjectId = require('mongodb').ObjectId
+const ObjectId = require('mongodb').ObjectId;
 
 const getAllMusic = async (req, res) => {
 	//#swagger.tags=['Music']
